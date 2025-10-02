@@ -1,0 +1,42 @@
+replicaCount: 1
+
+image:
+  repository: ghcr.io/cloudphilos/outbound-k8s-sensor
+  pullPolicy: IfNotPresent
+  tag: "stable"
+
+serviceAccount:
+  create: true
+  name: "outbound-k8s-sensor"
+  # For EKS with IRSA (IAM Roles for Service Accounts):
+  # Set this to your IAM role ARN that has permissions to access AWS Secrets Manager
+  roleArn: ""
+
+securityContext:
+  allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: true
+  capabilities:
+    drop:
+      - ALL
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 10m
+    memory: 64Mi
+
+env:
+  apiKeySecretName: "/cloudphilos/outbound/api-key"
+  awsRegion: "eu-west-1"
+
+  # CloudPhilos Outbound API endpoint (DO NOT CHANGE unless directed by support)
+  endpointUrl: "https://api.outbound.cloudphilos.net/v1/ingest/ip"
+
+  # Your CloudPhilos tenant ID (REQUIRED - obtain from your integration setup)
+  tenantId: "YOUR_TENANT_ID_HERE"
+  logLevel: "INFO" # Options: DEBUG, INFO, WARN, ERROR
+  serviceVersion: "1.0.0"
+  environment: "production" # or "staging", "development"
+  deploymentEnvironment: "eks" # or "gke", "aks", "self-hosted"

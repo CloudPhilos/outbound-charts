@@ -1,0 +1,23 @@
+# Helm packaged charts
+*.tgz
+
+# Helm chart lock files
+*.lock
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Backup files
+*.bak
