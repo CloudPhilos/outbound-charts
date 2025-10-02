@@ -64,6 +64,8 @@ jobs:
       - name: Commit and push to gh-pages
         working-directory: gh-pages
         run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
           git add .
           git diff --staged --quiet || git commit -m "Release Helm charts from ${{ github.sha }}"
           git push origin gh-pages
