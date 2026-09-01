@@ -1,11 +1,11 @@
-# CloudPhilos Outbound Kubernetes Sensor
+# Outbound Kubernetes Sensor
 
-The CloudPhilos Outbound Kubernetes Sensor monitors pod lifecycle events in your Kubernetes cluster and reports egress IP information to the CloudPhilos platform.
+The Outbound Kubernetes Sensor monitors pod lifecycle events in your Kubernetes cluster and reports egress IP information to the Outbound platform.
 
 ## Installation
 
 ```bash
-# Add the CloudPhilos Helm repository
+# Add the Outbound Helm repository
 helm repo add cloudphilos https://charts.cloudphilos.net
 helm repo update
 
@@ -15,7 +15,8 @@ kubectl create namespace outbound-system
 # Install the chart
 helm install outbound-k8s-sensor cloudphilos/outbound-k8s-sensor \
   --namespace outbound-system \
-  --set env.tenantId=YOUR_TENANT_ID
+  --set env.clusterName=YOUR_CLUSTER_NAME \
+  --set serviceAccount.roleArn=arn:aws:iam::ACCOUNT_ID:role/YOUR_IRSA_ROLE
 ```
 
 ## Configuration
