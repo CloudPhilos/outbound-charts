@@ -31,12 +31,14 @@ env:
   apiKeySecretName: "/cloudphilos/outbound/api-key"
   awsRegion: "eu-west-1"
 
-  # CloudPhilos Outbound API endpoint (DO NOT CHANGE unless directed by support)
+  # Outbound API endpoint (DO NOT CHANGE unless directed by support)
   endpointUrl: "https://api.outbound.cloudphilos.net/v1/ingest/ip"
 
-  # Your CloudPhilos tenant ID (REQUIRED - obtain from your integration setup)
-  tenantId: "YOUR_TENANT_ID_HERE"
+  # Name of this Kubernetes cluster. Must match the EKS cluster name exactly -
+  # Outbound matches on it to show the cluster as enrolled. Left empty, pods
+  # are still reported but the cluster never shows as enrolled.
+  clusterName: ""
+
   logLevel: "INFO" # Options: DEBUG, INFO, WARN, ERROR
-  serviceVersion: "1.0.0"
   environment: "production" # or "staging", "development"
   deploymentEnvironment: "eks" # or "gke", "aks", "self-hosted"
