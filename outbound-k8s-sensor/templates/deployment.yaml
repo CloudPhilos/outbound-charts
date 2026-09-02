@@ -14,6 +14,10 @@ spec:
       labels:
         app: outbound-k8s-sensor
     spec:
+      {{- if .Values.imagePullSecret }}
+      imagePullSecrets:
+        - name: {{ .Values.imagePullSecret }}
+      {{- end }}
       serviceAccountName: {{ .Values.serviceAccount.name }}
       containers:
         - name: outbound-k8s-sensor

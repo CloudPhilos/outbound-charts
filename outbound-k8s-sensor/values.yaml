@@ -5,6 +5,10 @@ image:
   pullPolicy: IfNotPresent
   tag: "stable"
 
+# Name of an existing dockerconfigjson secret in the release namespace. Only
+# needed for a private registry; the default image above is public.
+imagePullSecret: ""
+
 serviceAccount:
   create: true
   name: "outbound-k8s-sensor"
