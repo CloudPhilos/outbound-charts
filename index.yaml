@@ -3,7 +3,17 @@ entries:
   outbound-k8s-sensor:
   - apiVersion: v2
     appVersion: 1.1.0
-    created: "2026-09-03T08:03:45.204366915Z"
+    created: "2026-09-09T12:20:33.380691333Z"
+    description: A Helm chart for the Kubernetes pod watcher controller.
+    digest: 66ea6f99a4281bc0d91e3f360ae759e700f503fb33a0694c17006686bfeb5cee
+    name: outbound-k8s-sensor
+    type: application
+    urls:
+    - https://charts.cloudphilos.net/outbound-k8s-sensor-2.2.0.tgz
+    version: 2.2.0
+  - apiVersion: v2
+    appVersion: 1.1.0
+    created: "2026-09-09T12:20:33.380392588Z"
     description: A Helm chart for the Kubernetes pod watcher controller.
     digest: 4e784d587fc5d3d1ab16520ca092bd9367de64f7aa96b98b6fc51c0e5c2a9bf9
     name: outbound-k8s-sensor
@@ -13,7 +23,7 @@ entries:
     version: 2.1.0
   - apiVersion: v2
     appVersion: 1.1.0
-    created: "2026-09-03T08:03:45.204117082Z"
+    created: "2026-09-09T12:20:33.380145409Z"
     description: A Helm chart for the Kubernetes pod watcher controller.
     digest: d506bba7d723c958528ac5ab7fb64d9a0e76cc169e5a78cde588ca655aff6843
     name: outbound-k8s-sensor
@@ -23,7 +33,7 @@ entries:
     version: 2.0.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-09-03T08:03:45.203800559Z"
+    created: "2026-09-09T12:20:33.379851273Z"
     description: A Helm chart for the Kubernetes pod watcher controller.
     digest: cf588763cbf34d692d348cde22225ba4348784f3bb16f024f8ffc33564455bc6
     name: outbound-k8s-sensor
@@ -31,4 +41,4 @@ entries:
     urls:
     - https://charts.cloudphilos.net/outbound-k8s-sensor-1.0.0.tgz
     version: 1.0.0
-generated: "2026-09-03T08:03:45.203348002Z"
+generated: "2026-09-09T12:20:33.379470776Z"
