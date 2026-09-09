@@ -32,6 +32,13 @@ resources:
     memory: 64Mi
 
 env:
+  # How the sensor gets its API key. On EKS it reads AWS Secrets Manager with
+  # the IRSA role above, from the path in apiKeySecretName. Anywhere else,
+  # create a Kubernetes Secret holding the key and name it here instead:
+  #   kubectl create secret generic outbound-api-key --from-literal=api_key=...
+  apiKeySecret:
+    name: ""
+    key: "api_key"
   apiKeySecretName: "/cloudphilos/outbound/api-key"
   awsRegion: "eu-west-1"
 

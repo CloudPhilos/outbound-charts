@@ -26,6 +26,13 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
+            {{- if .Values.env.apiKeySecret.name }}
+            - name: API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.env.apiKeySecret.name }}
+                  key: {{ .Values.env.apiKeySecret.key }}
+            {{- end }}
             - name: API_KEY_SECRET_NAME
               value: {{ .Values.env.apiKeySecretName | quote }}
             - name: AWS_REGION
